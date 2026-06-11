@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "img-converter"
+version = "2.0.0"
+description = "Universal batch image converter — DDS, PNG, JPEG, WebP, AVIF, HEIF, TIFF, GIF, BMP, QOI"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "Image Converter Pro"}]
+keywords = ["image", "converter", "dds", "png", "batch"]
+dependencies = [
+    "PyQt5>=5.15",
+    "Pillow>=9.0",
+]
+
+[project.optional-dependencies]
+avif = ["pillow-avif-plugin>=0.1"]
+heif = ["pillow-heif>=0.7"]
+all = ["pillow-avif-plugin>=0.1", "pillow-heif>=0.7"]
+
+[project.scripts]
+img-converter = "img_converter.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+img_converter = ["py.typed"]

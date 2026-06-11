@@ -1,0 +1,4 @@
+PyQt5>=5.15
+Pillow>=9.0
+pillow-avif-plugin>=0.1; extra == "avif"
+pillow-heif>=0.7; extra == "heif"
